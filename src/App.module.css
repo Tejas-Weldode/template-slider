@@ -1,0 +1,50 @@
+.container-background-div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1001;
+    background: rgba(0, 0, 0, 1);
+}
+
+.container-background-img {
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: opacity 300ms ease;
+}
+
+/* Glassmorphism overlay */
+.glass-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Blur effect */
+    --blurValue: 10px;
+    backdrop-filter: blur(var(--blurValue));
+    -webkit-backdrop-filter: blur(var(--blurValue));
+    /* */
+    background: rgba(0, 0, 0, 0.1); /* Light transparent overlay */
+    z-index: -1000; /* Ensure it stays behind content */
+}
+
+.fade-in {
+    opacity: 0;
+}
+
+.fade-out {
+    opacity: 1;
+}
+
+.heading {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: rgb(255, 255, 255);
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+    margin: 100px 0 1rem 0;
+}

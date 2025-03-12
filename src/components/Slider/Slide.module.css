@@ -1,1 +1,5 @@
-
+.slide-image {
+    height: inherit;
+    width: inherit;
+    object-fit: cover;
+}
