@@ -1,0 +1,106 @@
+:root {
+    --width: 240px;
+}
+
+@media screen and (min-width: 600px) {
+    :root {
+        --width: 350px;
+    }
+}
+
+.slider-container {
+    background-color: crimson;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /*?*/
+}
+
+.slides-container {
+    background-color: cornflowerblue;
+    display: flex;
+    align-items: center;
+    height: var(--width);
+    width: calc(2 * var(--width));
+    position: relative;
+}
+
+.slider-controller {
+    background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+    width: inherit;
+    user-select: none;
+    gap: 1rem;
+}
+
+.pagination-fraction {
+    text-align: center;
+    font-weight: 700;
+    font-size: 2.5rem;
+    letter-spacing: 0.25rem;
+    width: 10rem;
+}
+
+.slider-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border: 1px solid rgb(111, 111, 111);
+    cursor: pointer;
+}
+
+.slider-button-active {
+    box-shadow: 0 0 100px rgb(0, 255, 255); /* Glow effect */
+}
+
+/* slide */
+.slider-slide {
+    background-color: rgb(255, 215, 0);
+    position: absolute;
+    height: inherit;
+    width: var(--width);
+    transition: all 0.2s ease-in-out;
+    display: none; /* Hide all slides by default */
+}
+.slider-slide-active {
+    display: block; /* Only display the active slide */
+}
+
+.slider-slide-0 {
+    z-index: 0;
+    left: calc(50% - calc(0.7 * var(--width)));
+    height: calc(var(--width) * 0.7);
+    width: calc(var(--width) * 0.7);
+    filter: brightness(25%);
+}
+.slider-slide-1 {
+    z-index: 1;
+    left: calc(50% - calc(0.6 * var(--width)));
+    height: calc(var(--width) * 0.85);
+    width: calc(var(--width) * 0.85);
+    filter: brightness(50%);
+}
+.slider-slide-2 {
+    z-index: 2;
+    left: 50%;
+    transform: translate(-50%);
+}
+.slider-slide-3 {
+    z-index: 1;
+    right: calc(50% - calc(0.6 * var(--width)));
+    height: calc(var(--width) * 0.85);
+    width: calc(var(--width) * 0.85);
+    filter: brightness(50%);
+}
+.slider-slide-4 {
+    z-index: 0;
+    right: calc(50% - calc(0.7 * var(--width)));
+    height: calc(var(--width) * 0.7);
+    width: calc(var(--width) * 0.7);
+    filter: brightness(25%);
+}
